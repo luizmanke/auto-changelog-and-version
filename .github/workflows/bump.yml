@@ -1,0 +1,12 @@
+name: "Bump version"
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+      - run: python --version
