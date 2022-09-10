@@ -1,7 +1,5 @@
 # Count the number of increment logs based on git commits
 
-# feat: add some feature [skip bump]
-
 set -e
 
 create_log_pattern() {
