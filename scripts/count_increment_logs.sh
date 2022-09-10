@@ -1,5 +1,7 @@
 # Count the number of increment logs based on git commits
 
+# fix some bug example
+
 set -e
 
 create_log_pattern() {
