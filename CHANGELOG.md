@@ -1,3 +1,9 @@
+## 1.0.0 (2022-09-10)
+
+### Feat
+
+- add some breaking change
+
 ## 0.1.0 (2022-09-10)
 
 ### Feat
