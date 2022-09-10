@@ -48,4 +48,22 @@ If neither `fix` or `feat` are present in the type of the latest commits, the ve
 
 The types related to bumps can be specified in the [CI/CD script](./scripts/count_increment_logs.sh).
 
+### Skip bump
+
+If the commit message have any of the default types but an automatic bump is not desired, add `[skip bump]` to the commit message and the version bump will be skipped.
+
+```
+feat: add some feature [skip bump]
+```
+
 > *A `develop` branch can also be used to hold unreleased changes. Check [Gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) for more information.*
+
+### Force bump
+
+If the commit message doesn't have any of the default types but an automatic bump is still desired, add `[bump]` to the commit message and the version bump will be performed.
+
+```
+refactor: some code [bump]
+```
+
+> *In this case, the changelog won't have any automatic change.*
