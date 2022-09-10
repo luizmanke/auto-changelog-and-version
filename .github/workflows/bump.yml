@@ -29,7 +29,9 @@ jobs:
 
   bump_version:
     needs: [count_increments]
-    if: needs.count_increments.outputs.n_increment_logs > 0
+    if: |
+      !contains(github.event.head_commit.message, '[skip bump]') &&
+      (needs.count_increments.outputs.n_increment_logs > 0 || contains(github.event.head_commit.message, '[bump]'))
     runs-on: ubuntu-latest
     steps:
 
