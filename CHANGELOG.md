@@ -1,3 +1,13 @@
+## 1.1.0 (2022-09-10)
+
+### Feat
+
+- add some feature [skip bump]
+
+### Refactor
+
+- some code [bump]
+
 ## 1.0.0 (2022-09-10)
 
 ### Feat
