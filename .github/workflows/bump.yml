@@ -8,9 +8,31 @@ on:
       - '**'
 
 jobs:
-  bump:
+
+  count_increments:
+    runs-on: ubuntu-latest
+    outputs:
+      n_increment_logs: ${{ steps.count_increment_logs.outputs.n_increment_logs }}
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          token: "${{ secrets.GITHUB_TOKEN }}"
+
+      - name: Count increment logs
+        id: count_increment_logs
+        run: |
+          n_increment_logs=$(bash ./scripts/count_increment_logs.sh)
+          echo "::set-output name=n_increment_logs::$n_increment_logs"
+
+  bump_version:
+    needs: [count_increments]
+    if: needs.count_increments.outputs.n_increment_logs > 0
     runs-on: ubuntu-latest
     steps:
+
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
