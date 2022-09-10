@@ -1,6 +1,7 @@
 # Count the number of increment logs based on git commits
 
 # fix some bug example
+# add some new feature example
 
 set -e
 
